@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Hello from '@/components/Hello';
-import User from '@/components/User';
+import User from '@/views/User';
 
 Vue.use(Router);
 
@@ -15,7 +15,7 @@ export default new Router({
     {
       path: '/user',
       name: 'User',
-      component: User
+      component: User,
     }
   ],
 });
