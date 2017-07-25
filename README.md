@@ -1,6 +1,6 @@
 # vue-scaffold
 
-> this is a ewell project
+> this is a vue-scaffold
 
 ## Build Setup
 
