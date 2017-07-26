@@ -1,14 +1,18 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-link to="/user"> ➣ Go to hahaha</router-link>
+    <head-top></head-top>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
+import HeadTop from './components/Header';
+
 export default {
   name: 'app',
+  components: {
+    HeadTop,
+  }
 };
 </script>
 
@@ -19,6 +23,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
