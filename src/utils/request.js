@@ -1,10 +1,9 @@
 import fetch from 'axios';
-// import fetch from 'isomorphic-fetch';
 import Promise from 'es6-promise';
 
 if (!window.Promise) {
   window.Promise = Promise;
-};
+}
 
 function checkStatus(response) {
   if (response.status >= 200 && response.status < 300) {
@@ -20,7 +19,12 @@ export default function request(url, options) {
   let headers = {};
   if (options && options.method !== 'GET') {
     headers = {
-      'content-type': 'application/json'
+      'content-type': 'application/json',
+      // 'entersession': '0a795093e6a3419895ad6a03676c9a7e',
+    };
+  } else {
+    headers = {
+      // 'entersession': '0a795093e6a3419895ad6a03676c9a7e',
     };
   }
   return fetch(url, { ...options, headers, credentials: 'same-origin' })

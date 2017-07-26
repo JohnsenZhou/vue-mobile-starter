@@ -2,12 +2,12 @@ import request from '../utils/request';
 
 
 export function fetch() {
-  return request('/replace/api/catalogs?client=1');
+  return request('/api/api/catalogs?client=1');
 }
 
 export function push(values) {
-  return request('/replace/api/catalogs', {
+  return request('/api/api/catalogs', {
     method: 'post',
-    data: JSON.stringify(values)
-  })
+    data: JSON.stringify(values),
+  });
 }
