@@ -1,50 +1,32 @@
 <template>
   <div>
-    
+    <ul id="example-1">
+      <li v-for="item in userList" :key="item.id">
+        {{ item.title }}
+      </li>
+    </ul>
+    <!-- <button @click="getUsers()">获取人员</button> -->
   </div>
 </template>
 
 <script>
-  import * as userServices from '../services/user';
-  import * as jsonServices from '../services/jsonholder';
+  import { mapActions, mapGetters } from 'vuex';
   
   export default {
     name: 'user',
-    data() {
-      return {
-        webUrl: '',
-        name: '',
-        serialNo: '',
-        id: '',
-      }
+    computed: {
+      ...mapGetters({
+        userList: 'allUsers'
+      })
     },
     methods: {
-      getDataList() {
-        jsonServices.getList().then((res) => {
-          console.log(res)
-        });
-        userServices.fetch().then((res) => {
-          console.log(res)
-        })
-      },
-      // pushData() {
-      //   let data = {};
-      //   data.webUrl = this.webUrl;
-      //   data.name = this.name;
-      //   data.serialNo = this.serialNo;
-      //   data.id = parseInt(this.id);
-      //   userServices.push(data).then((res) => {
-      //     console.log(res)
-      //   })
-      // }
+      ...mapActions([
+        'getUsers'
+      ])
     },
-    computed: {
-
-    },
-    mounted() {
-      this.getDataList();
+    created() {
+      this.$store.dispatch('getUsers')
     }
-
   }
 </script>
 

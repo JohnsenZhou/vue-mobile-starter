@@ -1,0 +1,2 @@
+export const SAVE_USERS_LIST = 'SAVE_USERS';
+export const SAVE_PHOTOS_LIST = 'SAVE_PHOTOS_LIST';

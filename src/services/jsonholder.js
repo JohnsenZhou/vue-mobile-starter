@@ -1,10 +1,10 @@
 import request from '../utils/request';
 
 
-export function getList() {
+export async function getList() {
   return request('/replace/posts');
 }
 
-export function getUser() {
+export async function getUser() {
   return request('/replace/users');
 }
