@@ -1,22 +1,21 @@
 <template>
   <div>
-    <ul id="example-1">
-      <li v-for="item in userList" :key="item.id">
-        {{ item.title }}
-      </li>
-    </ul>
-    <!-- <button @click="getUsers()">获取人员</button> -->
+    <users-item v-for="item in usersList" :key="item.id" :item="item"></users-item>
   </div>
 </template>
 
 <script>
   import { mapActions, mapGetters } from 'vuex';
+  import UsersItem from '../components/UsersItem.vue';
   
   export default {
-    name: 'user',
+    name: 'users',
+    components: {
+      UsersItem
+    },
     computed: {
       ...mapGetters({
-        userList: 'allUsers'
+        usersList: 'allUsers'
       })
     },
     methods: {
