@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <Item v-for="item in postsList" :key="item.id" :item="item"></Item>
   </div>
 </template>

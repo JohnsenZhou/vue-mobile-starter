@@ -16,7 +16,7 @@ const actions = {
   getPosts({ commit }) {
     jsonServices.getPostsList().then((res) => {
       const postsList = res.data.data;
-      console.log(postsList)
+      // console.log(postsList)
       commit(types.SAVE_POSTS_LIST, { postsList });
     });
   },

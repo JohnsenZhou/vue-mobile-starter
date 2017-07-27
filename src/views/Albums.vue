@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <albums-item v-for="item in albums" :key="item.id" :item="item"></albums-item>
   </div>
 </template>
