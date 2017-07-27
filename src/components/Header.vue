@@ -1,8 +1,8 @@
 <template>
   <div class="header">
-    <div class="title"><router-link to="/">首页</router-link></div>
-    <div class="title"><router-link to="/theme">啦啦啦</router-link></div>
-    <div class="title"><router-link to="/user">列表</router-link></div>
+    <div class="title"><router-link to="/">主页</router-link></div>
+    <div class="title"><router-link to="/albums">相册</router-link></div>
+    <div class="title"><router-link to="/users">用户中心</router-link></div>
   </div>
 </template>
 

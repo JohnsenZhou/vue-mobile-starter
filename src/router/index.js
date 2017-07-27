@@ -1,7 +1,9 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Hello from '@/components/Hello';
-import User from '@/views/User';
+import Posts from '@/views/Posts';
+import Albums from '@/views/Albums';
+import Users from '@/views/Users';
 
 Vue.use(Router);
 
@@ -9,13 +11,23 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Hello',
-      component: Hello,
+      name: 'posts',
+      component: Posts,
     },
     {
-      path: '/user',
-      name: 'User',
-      component: User,
-    }
+      path: '/albums',
+      name: 'albums',
+      component: Albums,
+    },
+    {
+      path: '/users',
+      name: 'users',
+      component: Users,
+    },
+    {
+      path: '/users/:userId',
+      name: 'user-detail',
+      component: Hello,
+    },
   ],
 });

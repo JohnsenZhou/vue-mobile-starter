@@ -20,11 +20,6 @@ export default function request(url, options) {
   if (options && options.method !== 'GET') {
     headers = {
       'content-type': 'application/json',
-      // 'entersession': '0a795093e6a3419895ad6a03676c9a7e',
-    };
-  } else {
-    headers = {
-      // 'entersession': '0a795093e6a3419895ad6a03676c9a7e',
     };
   }
   return fetch(url, { ...options, headers, credentials: 'same-origin' })
