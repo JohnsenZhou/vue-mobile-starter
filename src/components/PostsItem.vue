@@ -1,5 +1,5 @@
 <template>
-  <li class="user-item">
+  <li class="user-item" @click="showPostDetail(item.id)">
     <span class="user-id">{{item.id}}</span>
     <span class="user-title">{{item.title}}</span>
     <p class="user-body">{{item.body}}</p>
@@ -13,6 +13,16 @@ export default {
   data() {
     return {
 
+    }
+  },
+  methods: {
+    showPostDetail(id) {
+      this.$router.push({
+        name: 'post-detail',
+        params: {
+          postId: id
+        }
+      })
     }
   },
 

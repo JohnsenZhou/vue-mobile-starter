@@ -14,8 +14,6 @@
 </template>
 
 <script>
-import router from 'vue-router';
-
 export default {
   name: 'users-item',
   props: ['item'],
@@ -26,12 +24,12 @@ export default {
   },
   methods: {
     getUserDetail(id) {
-      router.push({
+      this.$router.push({
         name: 'user-detail',
         params: {
           userId: id
         }
-      })
+      });
     }
   }
 

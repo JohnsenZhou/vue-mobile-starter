@@ -1,30 +1,28 @@
 <template>
   <div class="container">
-    <users-item v-for="item in usersList" :key="item.id" :item="item"></users-item>
+    <div>{{postDetail}}</div>
     <clip-loader class="spinner" :loading="showSpinner" :color="color" :size="size"></clip-loader>
   </div>
 </template>
 
 <script>
   import { mapActions, mapGetters } from 'vuex';
-  import UsersItem from '../components/UsersItem.vue';
-  
   
   export default {
-    name: 'users',
+    name: 'post-detail',
     data() {
       return {
+        postId: this.$route.params.postId,
         color: '#00b4ff',
         size: '30px'
       }
     },
     components: {
-      UsersItem,
-      // ClipLoader
+
     },
     computed: {
       ...mapGetters({
-        usersList: 'allUsers',
+        postDetail: 'postDetail',
         showSpinner: 'isSpinner'
       })
     },
@@ -34,7 +32,8 @@
       ])
     },
     created() {
-      this.$store.dispatch('getUsers')
+      // console.log(this.$route.params)
+      this.$store.dispatch('getPostDetail', this.postId)
     },
   }
 </script>

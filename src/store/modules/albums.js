@@ -16,7 +16,7 @@ const actions = {
   getAlbums({ commit }) {
     jsonServices.getAlbums().then((res) => {
       const albumsList = res.data.data;
-      console.log(albumsList)
+      // console.log(albumsList)
       commit(types.SAVE_ALBULMS_LIST, { albumsList });
     });
   },

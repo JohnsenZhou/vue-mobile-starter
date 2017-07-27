@@ -13,10 +13,11 @@ const getters = {
 
 // actions
 const actions = {
-  getUsers({ commit }) {
+  getUsers({ commit, dispatch }) {
     jsonServices.getUsers().then((res) => {
       const usersList = res.data.data;
-      console.log(usersList)
+      const showSpinner = false;
+      dispatch('doSpinner', showSpinner);
       commit(types.SAVE_USERS_LIST, { usersList });
     });
   },

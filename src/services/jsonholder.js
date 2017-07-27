@@ -5,6 +5,10 @@ export async function getPostsList() {
   return request('/replace/posts');
 }
 
+export async function getPostDetail(id) {
+  return request(`/replace/posts/${id}`);
+}
+
 export async function getUsers() {
   return request('/replace/users');
 }

@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import Hello from '@/components/Hello';
 import Posts from '@/views/Posts';
+import PostDetail from '@/views/PostDetail';
 import Albums from '@/views/Albums';
 import Users from '@/views/Users';
 
@@ -13,6 +14,11 @@ export default new Router({
       path: '/',
       name: 'posts',
       component: Posts,
+    },
+    {
+      path: '/posts/:postId',
+      name: 'post-detail',
+      component: PostDetail,
     },
     {
       path: '/albums',
