@@ -4,32 +4,29 @@ import * as jsonServices from '../../services/jsonholder';
 // initial state
 const state = {
   usersList: [],
-  showSpinner: true
 };
 
 // getters
 const getters = {
   allUsers: state => state.usersList,
-  isSpinner: state => state.showSpinner,
 };
 
 // actions
 const actions = {
-  getUsers({ commit }) {
+  getUsers({ commit, dispatch }) {
     jsonServices.getUsers().then((res) => {
       const usersList = res.data.data;
       const showSpinner = false;
-      // console.log(usersList)
-      commit(types.SAVE_USERS_LIST, { usersList, showSpinner });
+      dispatch('doSpinner', showSpinner);
+      commit(types.SAVE_USERS_LIST, { usersList });
     });
   },
 };
 
 // mutations
 const mutations = {
-  [types.SAVE_USERS_LIST] (state, { usersList, showSpinner }) {
+  [types.SAVE_USERS_LIST] (state, { usersList }) {
     state.usersList = usersList;
-    state.showSpinner = showSpinner;
   },
 };
 
