@@ -33,6 +33,9 @@
     },
     created() {
       this.$store.dispatch('getPosts')
+    },
+    destroyed() {
+      this.$store.dispatch('resetSpinner');
     }
   }
 </script>

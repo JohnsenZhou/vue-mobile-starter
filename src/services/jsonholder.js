@@ -9,6 +9,10 @@ export async function getPostDetail(id) {
   return request(`/replace/posts/${id}`);
 }
 
+export async function getPostComment(id) {
+  return request(`/replace/posts/${id}/comments`);
+}
+
 export async function getUsers() {
   return request('/replace/users');
 }

@@ -24,4 +24,9 @@ export default {
   text-align: center;
   color: #2c3e50;
 }
+.router-link-exact-active {
+  font-weight: bold;
+  text-shadow: 0 2px 4px #949494;
+  font-size: 1.2em;
+}
 </style>

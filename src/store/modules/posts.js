@@ -4,7 +4,7 @@ import * as jsonServices from '../../services/jsonholder';
 // initial state
 const state = {
   postsList: [],
-  postDetail: {}
+  postDetail: {},
 };
 
 // getters
@@ -15,19 +15,29 @@ const getters = {
 
 // actions
 const actions = {
-  getPosts({ commit }) {
+  getPosts({ commit, dispatch }) {
     jsonServices.getPostsList().then((res) => {
       const postsList = res.data.data;
-      // console.log(postsList)
+      const showSpinner = false;
+      dispatch('doSpinner', showSpinner);
       commit(types.SAVE_POSTS_LIST, { postsList });
     });
   },
-  getPostDetail({ commit }, postId) {
+  getPostDetail({ commit, dispatch }, postId) {
     jsonServices.getPostDetail(postId).then((res) => {
-      // console.log(res.data.data)
-      const postDetail = res.data.data;
-      commit(types.SAVE_POSTDETAIL, { postDetail })
-    })
+      const showSpinner = false;
+      let postDetail = res.data.data;
+      let comments = [];
+      jsonServices.getPostComment(postId).then((res) => {
+        comments = res.data.data;
+        postDetail.comments = comments;
+        dispatch('doSpinner', showSpinner);
+        commit(types.SAVE_POSTDETAIL, { postDetail })
+      });
+    });
+  },
+  resetDetail({ commit }) {
+    commit(types.RESET_POSTDETAIL)
   }
 };
 
@@ -39,6 +49,10 @@ const mutations = {
 
   [types.SAVE_POSTDETAIL] (state, { postDetail }) {
     state.postDetail = postDetail;
+  },
+
+  [types.RESET_POSTDETAIL] (state) {
+    state.postDetail = {};
   }
 };
 
