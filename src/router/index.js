@@ -40,6 +40,18 @@ export default new Router({
       path: '/users/:userId',
       name: 'user-detail',
       component: Hello,
+      children: [
+        {
+          path: 'todo',
+          name: 'user-todo',
+          component: Hello,
+        },
+        {
+          path: 'posts',
+          name: 'user-posts',
+          component: Hello,
+        },
+      ],
     },
   ],
 });

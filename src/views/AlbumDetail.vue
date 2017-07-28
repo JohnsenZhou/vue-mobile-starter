@@ -3,10 +3,7 @@
     <img class="albun-png" src="../assets/img/album.png" alt="">
     <!-- <span class="album-detail-title">详情</span> -->
     <div class="list-item">
-
-      <ul>
-
-      </ul>
+      {{albumDetail}}
     </div>
     <clip-loader class="spinner" :loading="showSpinner" :color="color" :size="size"></clip-loader>
   </div>
