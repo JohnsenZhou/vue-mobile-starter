@@ -37,7 +37,7 @@ export default {
     height: 2px;
     margin-top: 1em;
     border: none;
-    background: -webkit-linear-gradient(left,#fff,#ffe4bb,#fff);
+    background: -webkit-linear-gradient(left,#fafafa,#ffe4bb,#fafafa);
   }
   .comment-user {
     /* 图片后面的文字垂直居中 */
