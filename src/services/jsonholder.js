@@ -20,3 +20,7 @@ export async function getUsers() {
 export async function getAlbums() {
   return request('/replace/albums');
 }
+
+export async function getAlbumDetail(id) {
+  return request(`/replace/albums/${id}/photos`);
+}

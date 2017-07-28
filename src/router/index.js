@@ -4,6 +4,7 @@ import Hello from '@/components/Hello';
 import Posts from '@/views/Posts';
 import PostDetail from '@/views/PostDetail';
 import Albums from '@/views/Albums';
+import AlbumDetail from '@/views/AlbumDetail';
 import Users from '@/views/Users';
 
 Vue.use(Router);
@@ -24,6 +25,11 @@ export default new Router({
       path: '/albums',
       name: 'albums',
       component: Albums,
+    },
+    {
+      path: '/albums/:albumId',
+      name: 'album-detail',
+      component: AlbumDetail,
     },
     {
       path: '/users',

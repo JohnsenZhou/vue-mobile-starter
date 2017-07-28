@@ -1,5 +1,5 @@
 <template>
-  <li class="list-item clearfix">
+  <li class="list-item clearfix" @click="showAlbumDetail(item.id)">
     <span class="list-id">{{item.id}}</span>
     <span class="list-title">{{item.title}}</span>
   </li>
@@ -14,6 +14,16 @@ export default {
 
     }
   },
+  methods: {
+    showAlbumDetail(id) {
+      this.$router.push({
+        name: 'album-detail',
+        params: {
+          albumId: id
+        }
+      })
+    }
+  }
 
 }
 </script>
