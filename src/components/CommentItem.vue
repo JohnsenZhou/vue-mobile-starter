@@ -3,7 +3,7 @@
     <img :src="imgSrc" alt="">
     <span class="comment-user">{{item.name}}</span>
     <p class="comment-body">{{item.body}}</p>
-    <p></p>
+    <hr>
   </li>
 </template>
 
@@ -13,7 +13,7 @@ export default {
   props: ['item'],
   data() {
     return {
-      userIconlist: [1, 2, 3, 4, 5, 6, 7],
+      userIconlist: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
       imgSrc: ''
     }
   },
@@ -26,12 +26,18 @@ export default {
 
 <style>
   .comment-item {
-    display: table;
+    margin: 1.4em auto;
     text-align: left;
   }
   .comment-item img {
     width: 3em;
     height: 3em;
+  }
+  .comment-item hr {
+    height: 2px;
+    margin-top: 1em;
+    border: none;
+    background: -webkit-linear-gradient(left,#fff,#ffe4bb,#fff);
   }
   .comment-user {
     /* 图片后面的文字垂直居中 */
@@ -45,5 +51,6 @@ export default {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    font-weight: 500;
   }
 </style>

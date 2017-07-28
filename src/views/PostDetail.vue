@@ -4,9 +4,10 @@
       <span class="list-id list-id-detail">{{postDetail.id}}</span>
       <span class="list-title list-title-detail">{{postDetail.title}}</span>
       <p class="post-body-detail">{{postDetail.body}}</p>
+      <button class="edit-btn">编辑</button>
     </div>
     <div class="comment-box clearfix">
-      <span class="comment-title">Post comments</span>
+      <span class="comment-title">评论</span>
       <ul class="comment-list clear">
         <comment-item v-for="item in postDetail.comments" :key="item.id" :item="item"></comment-item>
       </ul>
