@@ -13,10 +13,12 @@ const getters = {
 
 // actions
 const actions = {
-  getAlbums({ commit }) {
+  getAlbums({ commit, dispatch }) {
     jsonServices.getAlbums().then((res) => {
       const albumsList = res.data.data;
       // console.log(albumsList)
+      const showSpinner = false;
+      dispatch('doSpinner', showSpinner);
       commit(types.SAVE_ALBULMS_LIST, { albumsList });
     });
   },

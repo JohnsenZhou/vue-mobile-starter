@@ -1,0 +1,39 @@
+.clearfix::after {
+  content: '.';
+  display: block;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  clear: both;
+}
+.clear {
+  clear: both;
+}
+.list-item, .comment-box {
+  display: block;
+  margin: 1em;
+  padding: 1em;
+  border-radius: 4px;
+  background: #fafafa;
+  box-shadow: 0 2px 6px #d7d7d7;
+}
+.list-title {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-left: .6em;
+  font-size: 1.2em;
+  font-weight: 500;
+  text-align: left;
+}
+.list-id {
+  float: left; 
+  display: inline-block;
+  width: 1.8em;
+  height: 1.8em;
+  background: #00b4ff;
+  line-height: 1.8em;
+  border-radius: 25px 25px;
+  color: #fff;
+}

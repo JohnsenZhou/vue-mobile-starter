@@ -34,8 +34,11 @@
       ])
     },
     created() {
-      this.$store.dispatch('getUsers')
+      this.$store.dispatch('getUsers');
     },
+    destroyed() {
+      this.$store.dispatch('resetSpinner');
+    }
   }
 </script>
 
