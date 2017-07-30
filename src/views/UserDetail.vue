@@ -3,7 +3,11 @@
     <img class="albun-png" src="../assets/img/album.png" alt="">
     <!-- <span class="album-detail-title">详情</span> -->
     <div class="list-item">
-      {{albumDetail}}
+      {{userDetail}}
+    </div>
+    <div>
+      {{userTodos}}
+      <router-view></router-view>
     </div>
     <clip-loader class="spinner" :loading="showSpinner" :color="color" :size="size"></clip-loader>
   </div>
@@ -16,7 +20,7 @@
     name: 'post-detail',
     data() {
       return {
-        albumId: this.$route.params.albumId,
+        userId: this.$route.params.userId,
         color: '#00b4ff',
         size: '30px',
       }
@@ -26,7 +30,8 @@
     },
     computed: {
       ...mapGetters({
-        albumDetail: 'albumDetail',
+        userDetail: 'userDetail',
+        userTodos: 'userTodos',
         showSpinner: 'isSpinner'
       })
     },
@@ -36,7 +41,8 @@
       ])
     },
     created() {
-      this.$store.dispatch('getAlbumDetail', this.albumId);
+      this.$store.dispatch('getUserDetail', this.userId);
+      this.$store.dispatch('getUserTodoList', this.userId);
     },
     destroyed() {
       this.$store.dispatch('resetAlbumDetail');

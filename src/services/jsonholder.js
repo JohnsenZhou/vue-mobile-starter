@@ -17,6 +17,14 @@ export async function getUsers() {
   return request('/replace/users');
 }
 
+export async function getUserDetail(userId) {
+  return request(`/replace/users/${userId}`);
+}
+
+export async function getUserTodoList(userId) {
+  return request(`/replace/users/${userId}/todos`);
+}
+
 export async function getAlbums() {
   return request('/replace/albums');
 }
