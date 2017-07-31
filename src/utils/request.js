@@ -1,4 +1,4 @@
-import fetch from 'axios';
+import axios from 'axios';
 import Promise from 'es6-promise';
 
 if (!window.Promise) {
@@ -22,7 +22,7 @@ export default function request(url, options) {
       'content-type': 'application/json',
     };
   }
-  return fetch(url, { ...options, headers, credentials: 'same-origin' })
+  return axios(url, { ...options, headers, credentials: 'same-origin' })
     .then(checkStatus)
     .then(data => ({ data }))
     .catch(err => ({ err }));

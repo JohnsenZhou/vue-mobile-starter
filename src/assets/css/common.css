@@ -9,7 +9,7 @@
 .clear {
   clear: both;
 }
-.list-item, .comment-box {
+.list-item, .comment-box, .user-datail-item {
   display: block;
   margin: 1em;
   padding: 1em;

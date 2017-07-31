@@ -6,6 +6,7 @@ import PostDetail from '@/views/PostDetail';
 import Albums from '@/views/Albums';
 import AlbumDetail from '@/views/AlbumDetail';
 import Users from '@/views/Users';
+import UserDetail from '@/views/UserDetail';
 
 Vue.use(Router);
 
@@ -39,7 +40,7 @@ export default new Router({
     {
       path: '/users/:userId',
       name: 'user-detail',
-      component: Hello,
+      component: UserDetail,
       children: [
         {
           path: 'todo',

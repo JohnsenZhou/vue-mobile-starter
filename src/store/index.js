@@ -8,7 +8,7 @@ import posts from './modules/posts';
 import albums from './modules/albums';
 import users from './modules/users';
 
-Vue.use(Vuex)
+Vue.use(Vuex);
 
 export default new Vuex.Store({
   state,
@@ -20,4 +20,4 @@ export default new Vuex.Store({
     albums,
     users,
   },
-})
+});

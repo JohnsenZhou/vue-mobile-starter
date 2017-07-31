@@ -1,9 +1,16 @@
 <template>
   <div class="container">
-    <img class="albun-png" src="../assets/img/album.png" alt="">
-    <!-- <span class="album-detail-title">详情</span> -->
-    <div class="list-item">
-      {{albumDetail}}
+    <div class="user-datail-item">
+      <img :src="imgSrc" alt="">
+      <span class="user-detail-name">{{userDetail.name}}</span>
+      <p>{{userDetail.address.suite}} - {{userDetail.address.street}} - {{userDetail.address.city}}</p>
+      <p>{{userDetail.phone}}</p>
+      <p>{{userDetail.email}}</p>
+      <p><a :href="userDetail.website">{{userDetail.website}}</a></p>
+    </div>
+    <div>
+      {{userTodos}}
+      <router-view></router-view>
     </div>
     <clip-loader class="spinner" :loading="showSpinner" :color="color" :size="size"></clip-loader>
   </div>
@@ -16,7 +23,9 @@
     name: 'post-detail',
     data() {
       return {
-        albumId: this.$route.params.albumId,
+        userId: this.$route.params.userId,
+        userIconlist: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+        imgSrc: '',
         color: '#00b4ff',
         size: '30px',
       }
@@ -26,7 +35,8 @@
     },
     computed: {
       ...mapGetters({
-        albumDetail: 'albumDetail',
+        userDetail: 'userDetail',
+        userTodos: 'userTodos',
         showSpinner: 'isSpinner'
       })
     },
@@ -36,7 +46,10 @@
       ])
     },
     created() {
-      this.$store.dispatch('getAlbumDetail', this.albumId);
+      let index =  Math.ceil((Math.random() * this.userIconlist.length));
+      this.imgSrc = `../static/user/emoji-${index}.png`;
+      this.$store.dispatch('getUserDetail', this.userId);
+      this.$store.dispatch('getUserTodoList', this.userId);
     },
     destroyed() {
       this.$store.dispatch('resetAlbumDetail');
@@ -46,15 +59,24 @@
 </script>
 
 <style>
-  .albun-png {
-    width: 3em;
+  .user-datail-item {
+     text-align: left; 
   }
-  /* .album-detail-title {
+  .user-datail-item img {
+    width: 3em;
+    height: 3em;
+  }
+  .user-detail-name {
+    padding-left: 1em;
     height: 3em;
     line-height: 3em;
-    padding-left: .6em;
     vertical-align: top;
-    font-size: 1.2em;
+    /* 超出部分... */
+    width: 70%;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     font-weight: 500;
-  } */
+  }
 </style>

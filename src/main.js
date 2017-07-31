@@ -1,8 +1,10 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue';
-import App from './App';
 import ClipLoader from 'vue-spinner/src/ClipLoader.vue';
+import MuseUI from 'muse-ui';
+import 'muse-ui/dist/muse-ui.css';
+import App from './App';
 import router from './router';
 import store from './store';
 import './assets/css/reset.css';
@@ -10,6 +12,7 @@ import './assets/css/common.css';
 
 Vue.config.productionTip = false;
 Vue.component('clip-loader', ClipLoader);
+Vue.use(MuseUI);
 
 /* eslint-disable no-new */
 new Vue({

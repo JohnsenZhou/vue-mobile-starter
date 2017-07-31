@@ -25,7 +25,7 @@ export default {
   methods: {
     getUserDetail(id) {
       this.$router.push({
-        name: 'user-detail',
+        name: 'user-todo',
         params: {
           userId: id
         }
