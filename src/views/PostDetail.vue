@@ -4,7 +4,13 @@
       <span class="list-id list-id-detail">{{postDetail.id}}</span>
       <span class="list-title list-title-detail">{{postDetail.title}}</span>
       <p class="post-body-detail">{{postDetail.body}}</p>
-      <button class="edit-btn">编辑</button>
+      <button class="edit-btn" @click="open">编辑</button>
+      <mu-dialog :open="dialog" title="编辑">
+        <mu-text-field v-model="title" label="标题" hintText="请输入标题" fullWidth />
+        <mu-text-field v-model="body" label="正文" hintText="请输入正文" fullWidth />
+        <mu-flat-button slot="actions" @click="close" primary label="取消"/>
+        <mu-flat-button slot="actions" primary @click="updateDetail" label="确定"/>
+      </mu-dialog>
     </div>
     <div class="comment-box clearfix">
       <span class="comment-title">评论</span>
@@ -17,7 +23,7 @@
 </template>
 
 <script>
-  import { mapActions, mapGetters } from 'vuex';
+  import { mapActions, mapGetters, mapState } from 'vuex';
   import CommentItem from '../components/CommentItem.vue';
   export default {
     name: 'post-detail',
@@ -26,6 +32,7 @@
         postId: this.$route.params.postId,
         color: '#00b4ff',
         size: '30px',
+        dialog: false
       }
     },
     components: {
@@ -35,12 +42,41 @@
       ...mapGetters({
         postDetail: 'postDetail',
         showSpinner: 'isSpinner'
-      })
+      }),
+      // ...mapState({
+      //   title: state => state.posts.updateTitle,
+      //   body: state => state.posts.updateBody
+      // }),
+      title: {
+        get() {
+          return this.$store.state.posts.updateTitle;
+        },
+        set(value) {
+          this.$store.commit('UPDATE_TITLE', value)
+        }
+      },
+      body: {
+        get() {
+          return this.$store.state.posts.updateBody;
+        },
+        set(value) {
+          this.$store.commit('UPDATE_BODY', value)
+        }
+      }
     },
     methods: {
       ...mapActions([
         
-      ])
+      ]),
+      open() {
+        this.dialog = true;
+      },
+      close() {
+        this.dialog = false;
+      },
+      updateDetail() {
+        this.close()
+      }
     },
     created() {
       this.$store.dispatch('getPostDetail', this.postId);

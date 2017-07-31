@@ -5,6 +5,8 @@ import * as jsonServices from '../../services/jsonholder';
 const state = {
   postsList: [],
   postDetail: {},
+  updateTitle: '',
+  updateBody: '',
 };
 
 // getters
@@ -49,11 +51,21 @@ const mutations = {
 
   [types.SAVE_POSTDETAIL] (state, { postDetail }) {
     state.postDetail = postDetail;
+    state.updateTitle = postDetail.title;
+    state.updateBody = postDetail.body;
   },
 
   [types.RESET_POSTDETAIL] (state) {
     state.postDetail = {};
-  }
+  },
+
+  UPDATE_TITLE(state, title) {
+    state.updateTitle = title;
+  },
+
+  UPDATE_BODY(state, body) {
+    state.updateBody = body;
+  },
 };
 
 export default {

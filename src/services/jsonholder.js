@@ -9,6 +9,13 @@ export async function getPostDetail(id) {
   return request(`/replace/posts/${id}`);
 }
 
+export async function updatePostDetail(values) {
+  return request(`/replace/posts/${values.id}`, {
+    method: 'PUT',
+    data: values,
+  });
+}
+
 export async function getPostComment(id) {
   return request(`/replace/posts/${id}/comments`);
 }

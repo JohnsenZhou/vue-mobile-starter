@@ -3,7 +3,7 @@
     <img :src="imgSrc" alt="">
     <span class="comment-user">{{item.name}}</span>
     <p class="comment-body">{{item.body}}</p>
-    <hr>
+    <hr class="comment-hr">
   </li>
 </template>
 
@@ -46,5 +46,11 @@ export default {
     text-overflow: ellipsis;
     white-space: nowrap;
     font-weight: 500;
+  }
+  .comment-hr {
+    height: 2px;
+    margin-top: 1em;
+    border: none;
+    background: -webkit-linear-gradient(left,#fafafa,#ffe4bb,#fafafa);
   }
 </style>

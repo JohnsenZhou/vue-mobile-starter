@@ -1,11 +1,10 @@
 <template>
   <div class="list-item" @click="open">
-    <img class="album-img" :src="item.thumbnailUrl" alt="">
+    <img class="album-img" :src="item.thumbnailUrl" :alt="item.id">
     <span class="album-detail-title">{{item.title}}</span>
     <mu-dialog :open="dialog" title="详情" @close="close">
       <img class="album-img-detail" :src="item.url" alt="">
       <span class="album-img-title">{{item.title}}</span>
-      <mu-flat-button slot="actions" @click="close" primary label="取消"/>
       <mu-flat-button slot="actions" primary @click="close" label="确定"/>
     </mu-dialog>
   </div>
