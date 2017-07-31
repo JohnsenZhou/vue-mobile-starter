@@ -1,3 +1,9 @@
+hr {
+  height: 2px;
+  margin-top: 1em;
+  border: none;
+  background: -webkit-linear-gradient(left,#fafafa,#ffe4bb,#fafafa);
+}
 .clearfix::after {
   content: '.';
   display: block;
@@ -9,7 +15,7 @@
 .clear {
   clear: both;
 }
-.list-item, .comment-box {
+.list-item, .comment-box, .user-datail-item {
   display: block;
   margin: 1em;
   padding: 1em;

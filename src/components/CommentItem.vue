@@ -33,12 +33,6 @@ export default {
     width: 3em;
     height: 3em;
   }
-  .comment-item hr {
-    height: 2px;
-    margin-top: 1em;
-    border: none;
-    background: -webkit-linear-gradient(left,#fafafa,#ffe4bb,#fafafa);
-  }
   .comment-user {
     /* 图片后面的文字垂直居中 */
     padding-left: 1em;

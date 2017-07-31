@@ -2,8 +2,9 @@
   <div class="container">
     <img class="albun-png" src="../assets/img/album.png" alt="">
     <!-- <span class="album-detail-title">详情</span> -->
-    <div class="list-item">
-      {{albumDetail}}
+    <div class="list-item" v-for="item in albumDetail" :key="item.id">
+      <img class="album-img" :src="item.thumbnailUrl" alt="">
+      <span class="album-detail-title">{{item.title}}</span>
     </div>
     <clip-loader class="spinner" :loading="showSpinner" :color="color" :size="size"></clip-loader>
   </div>
@@ -47,14 +48,23 @@
 
 <style>
   .albun-png {
-    width: 3em;
+    width: 5em;
   }
-  /* .album-detail-title {
+  .album-img {
+    width: 3em;
+    height: 3em;
+  }
+  .album-detail-title {
+    padding-left: 1em;
     height: 3em;
     line-height: 3em;
-    padding-left: .6em;
     vertical-align: top;
-    font-size: 1.2em;
+    /* 超出部分... */
+    width: 70%;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     font-weight: 500;
-  } */
+  } 
 </style>
