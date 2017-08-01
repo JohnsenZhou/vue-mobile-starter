@@ -4,6 +4,7 @@ import Vue from 'vue';
 import ClipLoader from 'vue-spinner/src/ClipLoader.vue';
 import MuseUI from 'muse-ui';
 import 'muse-ui/dist/muse-ui.css';
+import 'muse-ui/dist/theme-light.css'
 import App from './App';
 import router from './router';
 import store from './store';
