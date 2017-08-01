@@ -24,6 +24,7 @@
     left: 0;
     width: 100%;
     display: flex;
+    z-index: 9999;
     height: 3rem;
     line-height: 3rem;
     background: #00b4ff;
