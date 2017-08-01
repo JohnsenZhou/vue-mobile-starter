@@ -9,7 +9,7 @@
         <mu-text-field v-model="title" label="标题" hintText="请输入标题" fullWidth />
         <mu-text-field v-model="body" label="正文" hintText="请输入正文" fullWidth />
         <mu-flat-button slot="actions" @click="close" primary label="取消"/>
-        <mu-flat-button slot="actions" primary @click="updateDetail" label="确定"/>
+        <mu-flat-button slot="actions" primary @click="updateDetail" label="修改"/>
       </mu-dialog>
     </div>
     <div class="comment-box clearfix">
@@ -24,6 +24,7 @@
 
 <script>
   import { mapActions, mapGetters, mapState } from 'vuex';
+  import * as jsonServices from '../services/jsonholder';
   import CommentItem from '../components/CommentItem.vue';
   export default {
     name: 'post-detail',
@@ -49,7 +50,7 @@
       // }),
       title: {
         get() {
-          return this.$store.state.posts.updateTitle;
+          return this.$store.state.posts.formData.title;
         },
         set(value) {
           this.$store.commit('UPDATE_TITLE', value)
@@ -57,7 +58,7 @@
       },
       body: {
         get() {
-          return this.$store.state.posts.updateBody;
+          return this.$store.state.posts.formData.body;
         },
         set(value) {
           this.$store.commit('UPDATE_BODY', value)
@@ -75,6 +76,14 @@
         this.dialog = false;
       },
       updateDetail() {
+        const formData = this.$store.state.posts.formData;
+        console.log(formData);
+        jsonServices.updatePostDetail(formData).then((res) => {
+          console.log(res.data.data);
+          const returnDetail = res.data.data;
+          console.log(this)
+          this.$store.commit('SAVE_POSTDETAIL', { postDetail: returnDetail });
+        })
         this.close()
       }
     },

@@ -5,8 +5,12 @@ import * as jsonServices from '../../services/jsonholder';
 const state = {
   postsList: [],
   postDetail: {},
-  updateTitle: '',
-  updateBody: '',
+  formData: {
+    title: '',
+    body: '',
+    id: 1,
+    userId: 1,
+  },
 };
 
 // getters
@@ -40,7 +44,10 @@ const actions = {
   },
   resetDetail({ commit }) {
     commit(types.RESET_POSTDETAIL)
-  }
+  },
+  // updateDetail({ commit }, returnDetail) {
+  //   commit(types.SAVE_POSTDETAIL, { postDetail: returnDetail });
+  // }
 };
 
 // mutations
@@ -50,9 +57,14 @@ const mutations = {
   },
 
   [types.SAVE_POSTDETAIL] (state, { postDetail }) {
-    state.postDetail = postDetail;
-    state.updateTitle = postDetail.title;
-    state.updateBody = postDetail.body;
+    console.log(postDetail)
+    state.postDetail = { ...state.postDetail, ...postDetail };
+    state.formData = {
+      title: postDetail.title,
+      body: postDetail.body,
+      id: postDetail.id,
+      userId: postDetail.userId,
+    };
   },
 
   [types.RESET_POSTDETAIL] (state) {
@@ -60,11 +72,11 @@ const mutations = {
   },
 
   UPDATE_TITLE(state, title) {
-    state.updateTitle = title;
+    state.formData.title = title;
   },
 
   UPDATE_BODY(state, body) {
-    state.updateBody = body;
+    state.formData.body = body;
   },
 };
 
