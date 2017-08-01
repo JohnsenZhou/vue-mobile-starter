@@ -1,7 +1,7 @@
 {
-  "name": "vue-ewell",
+  "name": "vue-scaffold",
   "version": "1.0.0",
-  "description": "this is a ewell project",
+  "description": "this is a vue scaffold",
   "author": "Johnsen",
   "private": true,
   "scripts": {
