@@ -1,0 +1,12 @@
+{
+  "name": "vue-scaffold",
+  "script": "server.js",
+  "env": {
+    "NODE_ENV": "production"
+  },
+  "error_file": "./log/app-err.log",
+  "out_file": "./log/app-out.log",
+  "exec_mode": "fork",
+  "merge_logs": true,
+  "log_date_format": "YYYY-MM-DD HH:mm Z"
+}
