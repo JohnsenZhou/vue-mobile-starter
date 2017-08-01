@@ -1,8 +1,8 @@
 <template>
   <div class="container">
     <div class="list-item">
-      <span class="list-id list-id-detail">{{postDetail.id}}</span>
-      <span class="list-title list-title-detail">{{postDetail.title}}</span>
+      <span class="list-id-detail">{{postDetail.id}}</span>
+      <span class="list-title-detail">{{postDetail.title}}</span>
       <p class="post-body-detail">{{postDetail.body}}</p>
       <button class="edit-btn" @click="open">编辑</button>
       <mu-dialog :open="dialog" title="编辑">
@@ -99,11 +99,21 @@
 
 <style>
   .list-id-detail {
-    float: none;
+    display: inline-block;
+    width: 1.8em;
+    height: 1.8em;
     margin-bottom: .3em;
+    line-height: 1.8em;
+    background: #00b4ff;
+    border-radius: 25px 25px;
+    color: #fff;
   }
   .list-title-detail {
-    white-space: normal;
+    display: block;
+    padding-left: .6em;
+    font-size: 1.2em;
+    font-weight: 500;
+    text-align: left;
   }
   .post-body-detail {
     margin-top: .8em;
