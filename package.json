@@ -12,12 +12,18 @@
   },
   "dependencies": {
     "axios": "^0.16.2",
+    "compression": "^1.7.0",
     "es6-promise": "^4.1.1",
+    "express": "^4.15.3",
+    "express-winston": "^2.4.0",
+    "helmet": "^3.8.1",
+    "http-proxy-middleware": "^0.17.4",
     "muse-ui": "^2.1.0",
     "vue": "^2.3.3",
     "vue-router": "^2.6.0",
     "vue-spinner": "^1.0.2",
-    "vuex": "^2.3.1"
+    "vuex": "^2.3.1",
+    "winston": "^2.3.1"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
