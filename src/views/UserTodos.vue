@@ -1,19 +1,14 @@
 <template>
   <div class="user-todos">
     <ul>
-      <li v-for="item in userTodos" :key="item.id">
-        <div class="user-todo-item">
-          <span>{{item.title}}</span>
-          <img src="../assets/img/true.png" alt="">
-        </div>
-      </li>
+      <user-todos-item v-for="item in userTodos" :key="item.id" :item="item"></user-todos-item>
     </ul>
   </div>
 </template>
 
 <script>
   import { mapActions, mapGetters } from 'vuex';
-  import CommentItem from '../components/CommentItem.vue';
+  import UserTodosItem from '../components/UserTodosItem.vue';
   export default {
     name: 'post-detail',
     data() {
@@ -22,7 +17,7 @@
       }
     },
     components: {
-      CommentItem,
+      UserTodosItem,
     },
     computed: {
       ...mapGetters({
@@ -46,12 +41,5 @@
 <style>
   .user-todos {
     padding: 1em;
-    
-  }
-  .user-todo-item {
-
-  }
-  .user-todo-item img {
-    width: 1.2em;
   }
 </style>
