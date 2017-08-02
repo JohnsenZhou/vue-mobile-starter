@@ -8,6 +8,8 @@ import AlbumDetail from '@/views/AlbumDetail';
 import Users from '@/views/Users';
 import UserDetail from '@/views/UserDetail';
 import UserTodos from '@/views/UserTodos';
+import UserPosts from '@/views/UserPosts';
+import UserAlbums from '@/views/UserAlbums';
 
 Vue.use(Router);
 
@@ -44,19 +46,19 @@ export default new Router({
       component: UserDetail,
       children: [
         {
-          path: 'todo',
-          name: 'user-todo',
+          path: 'todos',
+          name: 'user-todos',
           component: UserTodos,
         },
         {
           path: 'posts',
           name: 'user-posts',
-          component: Hello,
+          component: UserPosts,
         },
         {
           path: 'albums',
           name: 'user-albums',
-          component: Hello,
+          component: UserAlbums,
         },
       ],
     },
