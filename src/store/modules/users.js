@@ -82,7 +82,23 @@ const mutations = {
   [types.RESET_USER_DETAIL] (state) {
     state.userDetail = {};
     state.userTodos = [];
-  }
+    state.userPosts = [];
+    state.userAblums = [];
+  },
+
+  // [types.RESET_USER_DETAIL_CHILDREN] (state, { childId }) {
+  //   switch(childId) {
+  //     case 1:
+  //       state.userTodos = [];
+  //       break;
+  //     case 2:
+  //       state.userPosts = [];
+  //       break;
+  //     case 3:
+  //       state.userAblums = [];
+  //       break;
+  //   }
+  // }
 };
 
 export default {
