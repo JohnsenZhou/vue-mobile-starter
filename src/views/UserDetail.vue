@@ -71,6 +71,30 @@
   .user-datail-item {
      text-align: left; 
   }
+  .user-datail-item p {
+    margin-top: 1em;
+    padding-left: 2.5em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    background-size: 1.3em 1.3em;
+    background-repeat: no-repeat;
+  }
+  .user-datail-item p:nth-child(3) {
+    background-image: url('../assets/img/address.png')
+  }
+  .user-datail-item p:nth-child(4) {
+    background-image: url('../assets/img/tel.png')
+  }
+  .user-datail-item p:nth-child(5) {
+    background-image: url('../assets/img/new_email.png')
+  }
+  .user-datail-item p:nth-child(6) {
+    background-image: url('../assets/img/blog.png')
+  }
+  .user-datail-item p a {
+    color: #00b4ff;
+  }
   .user-datail-item img {
     width: 3em;
     height: 3em;
