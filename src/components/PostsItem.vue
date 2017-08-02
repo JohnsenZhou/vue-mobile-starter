@@ -30,16 +30,6 @@ export default {
 </script>
 
 <style>
-  .post-body {
-    margin-top: .8em;
-    text-align: left;
-    /* text-indent: 1em; */
-    overflow : hidden;
-    /* 多行文本截断 */
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-  }
+  
 </style>
 
