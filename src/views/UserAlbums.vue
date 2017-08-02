@@ -1,9 +1,8 @@
 <template>
     <ul>
-      <li class="user-posts" @click="showPostDetail(item.id)" v-for="item in userPosts" :key="item.id">
-        <span class="user-posts-id">{{item.id}}</span>
+      <li class="user-ablums" v-for="item in userAblums" @click="showAlbumDetail(item.id)" :key="item.id">
+        <span class="user-ablums-id">{{item.id}}</span>
         <span class="list-title">{{item.title}}</span>
-        <p class="post-body">{{item.body}}</p>
       </li>
     </ul>
 </template>
@@ -11,35 +10,35 @@
 <script>
   import { mapActions, mapGetters } from 'vuex';
   export default {
-    name: 'post-detail',
+    name: 'ablums-detail',
     data() {
       return {
         userId: this.$route.params.userId,
       }
     },
     components: {
-      
+
     },
     computed: {
       ...mapGetters({
-        userPosts: 'userPosts',
+        userAblums: 'userAblums',
       })
     },
     methods: {
       ...mapActions([
         
       ]),
-      showPostDetail(id) {
+      showAlbumDetail(id) {
         this.$router.push({
-          name: 'post-detail',
+          name: 'album-detail',
           params: {
-            postId: id
+            albumId: id
           }
         })
       }
     },
     created() {
-      this.$store.dispatch('getUserPostsList', this.userId);
+      this.$store.dispatch('getUserAlbumsList', this.userId);
     },
     destroyed() {
 
@@ -48,14 +47,14 @@
 </script>
 
 <style>
-  .user-posts {
+  .user-ablums {
     margin-bottom: 1em;
     padding: 1em;
     border: 1px solid #ffc9c9;
     border-radius: 4px;
     background: #f6f6f6;
   }
-  .user-posts-id {
+  .user-ablums-id {
     float: left; 
     width: 1.8em;
     height: 1.8em;

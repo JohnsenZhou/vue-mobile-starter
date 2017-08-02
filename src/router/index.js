@@ -9,6 +9,7 @@ import Users from '@/views/Users';
 import UserDetail from '@/views/UserDetail';
 import UserTodos from '@/views/UserTodos';
 import UserPosts from '@/views/UserPosts';
+import UserAlbums from '@/views/UserAlbums';
 
 Vue.use(Router);
 
@@ -57,7 +58,7 @@ export default new Router({
         {
           path: 'albums',
           name: 'user-albums',
-          component: Hello,
+          component: UserAlbums,
         },
       ],
     },
