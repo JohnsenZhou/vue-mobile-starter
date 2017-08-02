@@ -1,12 +1,12 @@
 <template>
   <div class="container">
     <div class="user-datail-item">
-      <img :src="imgSrc" alt="">
+      <img :src="imgSrc" v-show="userDetail.address != null" alt="">
       <span class="user-detail-name">{{userDetail.name}}</span>
       <p v-if="userDetail.address!=null">{{userDetail.address.suite}} - {{userDetail.address.street}} - {{userDetail.address.city}}</p>
       <p>{{userDetail.phone}}</p>
       <p>{{userDetail.email}}</p>
-      <p><a :href="userDetail.website">{{userDetail.website}}</a></p>
+      <p><a @click="goBlog">{{userDetail.website}}</a></p>
     </div>
     <div class="user-children-box">
       <mu-bottom-nav :value="bottomNav" @change="handleChange">
@@ -53,6 +53,11 @@
       ]),
       handleChange (val) {
         this.bottomNav = val
+      },
+      goBlog() {
+        const href = 'http://' + this.userDetail.website;
+        // console.log(this.userDetail.website);
+        window.location.href = href;
       }
     },
     created() {
@@ -61,7 +66,7 @@
       this.$store.dispatch('getUserDetail', this.userId);
     },
     destroyed() {
-      this.$store.dispatch('resetAlbumDetail');
+      this.$store.commit('RESET_USER_DETAIL');
       this.$store.dispatch('resetSpinner');
     }
   }

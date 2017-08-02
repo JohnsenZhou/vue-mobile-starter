@@ -53,6 +53,11 @@ const mutations = {
 
   [types.SAVE_USERS_TODOS] (state, { userTodos }) {
     state.userTodos = userTodos;
+  },
+
+  [types.RESET_USER_DETAIL] (state) {
+    state.userDetail = {};
+    state.userTodos = [];
   }
 };
 
