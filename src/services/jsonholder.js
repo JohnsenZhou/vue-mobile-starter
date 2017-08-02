@@ -36,6 +36,10 @@ export async function getUserPostList(userId) {
   return request(`/replace/users/${userId}/posts`);
 }
 
+export async function getUserAlbumsList(userId) {
+  return request(`/replace/users/${userId}/posts`);
+}
+
 export async function getAlbums() {
   return request('/replace/albums');
 }

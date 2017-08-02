@@ -6,7 +6,8 @@ const state = {
   usersList: [],
   userDetail: {},
   userTodos: [],
-  userPosts: []
+  userPosts: [],
+  userAblums: [],
 };
 
 // getters
@@ -15,6 +16,7 @@ const getters = {
   userDetail: state => state.userDetail,
   userTodos: state => state.userTodos,
   userPosts: state => state.userPosts,
+  userAblums: state => state.userAblums,
 };
 
 // actions
@@ -47,6 +49,12 @@ const actions = {
       commit(types.SAVE_USERS_POSTS, { userPosts });
     })
   },
+  getUserAlbumsList({ commit, dispatch }, userId) {
+    jsonServices.getUserAlbumsList(userId).then((res) => {
+      const userAblums = res.data.data;
+      commit(types.SAVE_USERS_ABLUMS, { userAblums });
+    })
+  },
 };
 
 // mutations
@@ -65,6 +73,10 @@ const mutations = {
 
   [types.SAVE_USERS_POSTS] (state, { userPosts }) {
     state.userPosts = userPosts;
+  },
+
+  [types.SAVE_USERS_ABLUMS] (state, { userAblums }) {
+    state.userAblums = userAblums;
   },
 
   [types.RESET_USER_DETAIL] (state) {
