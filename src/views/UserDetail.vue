@@ -10,11 +10,13 @@
     </div>
     <div class="user-children-box">
       <mu-bottom-nav :value="bottomNav" @change="handleChange">
-        <mu-bottom-nav-item :to="todoRouter" value="todos" title="任务" icon="event_note"/>
-        <mu-bottom-nav-item :to="postRouter" value="posts" title="动态" icon="bubble_chart"/>
-        <mu-bottom-nav-item :to="albumRouter" value="ablums" title="相册" icon="photo_library"/>
+        <mu-bottom-nav-item :to="todoRouter" value="user-todos" title="任务" icon="event_note"/>
+        <mu-bottom-nav-item :to="postRouter" value="user-posts" title="动态" icon="bubble_chart"/>
+        <mu-bottom-nav-item :to="albumRouter" value="user-albums" title="相册" icon="photo_library"/>
       </mu-bottom-nav>
-      <router-view></router-view>
+      <div class="user-children-item">
+        <router-view></router-view>
+      </div>
     </div>
     <clip-loader class="spinner" :loading="showSpinner" :color="color" :size="size"></clip-loader>
   </div>
@@ -22,7 +24,6 @@
 
 <script>
   import { mapActions, mapGetters } from 'vuex';
-  import CommentItem from '../components/CommentItem.vue';
   export default {
     name: 'post-detail',
     data() {
@@ -33,13 +34,13 @@
         color: '#00b4ff',
         size: '30px',
         bottomNav: 'todos',
-        todoRouter: `/users/${this.$route.params.userId}/todo`,
+        todoRouter: `/users/${this.$route.params.userId}/todos`,
         albumRouter: `/users/${this.$route.params.userId}/albums`,
         postRouter: `/users/${this.$route.params.userId}/posts`
       }
     },
     components: {
-      CommentItem,
+
     },
     computed: {
       ...mapGetters({
@@ -56,13 +57,13 @@
       },
       goBlog() {
         const href = 'http://' + this.userDetail.website;
-        // console.log(this.userDetail.website);
         window.location.href = href;
       }
     },
     created() {
       let index =  Math.ceil((Math.random() * this.userIconlist.length));
       this.imgSrc = `../static/user/emoji-${index}.png`;
+      this.bottomNav = this.$route.name;
       this.$store.dispatch('getUserDetail', this.userId);
     },
     destroyed() {
@@ -122,5 +123,8 @@
     border-radius: 4px;
     background: #fafafa;
     box-shadow: 0 2px 6px #d7d7d7;
+  }
+  .user-children-item {
+    padding: 1em;
   }
 </style>

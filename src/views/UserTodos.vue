@@ -1,9 +1,7 @@
 <template>
-  <div class="user-todos">
     <ul>
       <user-todos-item v-for="item in userTodos" :key="item.id" :item="item"></user-todos-item>
     </ul>
-  </div>
 </template>
 
 <script>
@@ -39,7 +37,5 @@
 </script>
 
 <style>
-  .user-todos {
-    padding: 1em;
-  }
+
 </style>
