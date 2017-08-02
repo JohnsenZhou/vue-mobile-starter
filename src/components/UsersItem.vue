@@ -6,7 +6,7 @@
       <div class="user-detail" v-show="show">
         <p class="phone">{{item.phone}}</p>
         <p class="email">{{item.email}}</p>
-        <p class="address">{{item.address.city}}<span class="read-more" @click.stop="getUserDetail(item.id)">Read more</span></p>
+        <p class="address">{{item.address.city}}<span class="read-more" @click.stop="getUserDetail(item.id)">查看更多</span></p>
         <!-- <router-link :to="{ name: 'user-detail', params: { userId: 1 }}">Read more</router-link> -->
       </div>
     </transition>
@@ -61,6 +61,11 @@ export default {
   }
   .read-more {
     float: right;
+    padding: .2em .6em;
+    font-weight: 500;
+    background: #00b4ff;
+    border-radius: 4px;
+    color: #fff;
   }
 
 
