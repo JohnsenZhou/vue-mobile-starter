@@ -1,6 +1,6 @@
 # vue-scaffold
 
-[View README in English]()
+
 
 > 基于 vue2 + vuex + vue-router 构建的移动端单页微应用，适合于vue2、vuex、vue-router核心概念的理解与掌握。
 
@@ -19,7 +19,7 @@
 
 ## 开源技术支持
 
-1. **[vue全家桶](https://cn.vuejs.org/)**：vue2 + vuex + vue-router
+1. **[vue全家桶](https://cn.vuejs.org/)**：vue2 + vuex + vue-router + vue-cli
 2. **[jsonplaceholder](http://jsonplaceholder.typicode.com)**：一个简单的在线模拟REST API服务器
 3. **[axios](https://github.com/mzabriskie/axios)**：基于Promise 的 HTTP 请求客户端,可同时在浏览器和 node.js 中使用
 4. **[muse-ui](https://museui.github.io/)**：基于 Vue 2.0 和 Material Desigin 的 UI 组件库
@@ -49,35 +49,28 @@ npm run build
 ## 目录结构
 ```
 .
-├── CHANGELOG.md
-├── LICENSE
-├── README.md
-├── build
-├── config
-├── config.dev.json
-├── config.prod.json
-├── dist
-│   ├── index.html
-│   └── static
-├── index.html
-├── node_modules
-├── npm-shrinkwrap.json
-├── package.json
-├── pm2.json
-├── server.js
-├── src
-│   ├── App.vue
-│   ├── assets
-│   ├── common
-│   ├── components
-│   ├── main.js
-│   ├── router
-│   ├── services
-│   ├── store
-│   ├── utils
-│   └── views
-└── static
-    └── user
+├── README.md            // README文件
+├── build                // vue-cli生成的配置文件
+├── config               // vue-cli生成的配置文件
+├── config.dev.json      // 部署配置文件
+├── config.prod.json     // 部署配置文件
+├── index.html           // index入口文件
+├── node_modules         
+├── npm-shrinkwrap.json  // 依赖版本锁定
+├── package.json         // npm 配置文件
+├── pm2.json             // pm2 配置文件
+├── server.js            // node 部署服务文件配置
+├── src 			     // 项目开发目录
+│   ├── App.vue          // 项目主组件
+│   ├── assets           // 资源文件夹
+│   ├── components       // vue通用组件
+│   ├── main.js          // vue实例入口文件
+│   ├── router           // vue-router配置文件
+│   ├── services         // 接口文件
+│   ├── store            // vuex配置文件
+│   ├── utils            // js通用工具组件
+│   └── views            // vue视图页面
+└── static               // 静态资源文件
 
 ```
 
