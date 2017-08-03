@@ -1,14 +1,14 @@
 <template>
   <div class="container">
-    <div class="user-datail-item">
-      <img :src="imgSrc" v-show="userDetail.address != null" alt="">
+    <div class="user-datail-item" v-show="userDetail.address != null">
+      <img :src="imgSrc" alt="">
       <span class="user-detail-name">{{userDetail.name}}</span>
       <p v-if="userDetail.address!=null">{{userDetail.address.suite}} - {{userDetail.address.street}} - {{userDetail.address.city}}</p>
       <p>{{userDetail.phone}}</p>
       <p>{{userDetail.email}}</p>
       <p><a @click="goBlog">{{userDetail.website}}</a></p>
     </div>
-    <div class="user-children-box">
+    <div class="user-children-box" v-show="userDetail.address != null">
       <mu-bottom-nav :value="bottomNav" @change="handleChange">
         <mu-bottom-nav-item :to="todoRouter" value="user-todos" title="任务" icon="event_note"/>
         <mu-bottom-nav-item :to="postRouter" value="user-posts" title="动态" icon="bubble_chart"/>
