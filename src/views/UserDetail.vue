@@ -78,6 +78,8 @@
      text-align: left; 
   }
   .user-datail-item p {
+    height: 1.3em;
+    line-height: 1.3em;
     margin-top: 1em;
     padding-left: 2.5em;
     overflow: hidden;

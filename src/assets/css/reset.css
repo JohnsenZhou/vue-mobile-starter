@@ -18,6 +18,6 @@ del,ins,u,s,a,a:hover{text-decoration:none;}
 body,textarea,input,button,select,keygen,legend{font:15px arial,simsun;color:#333;outline:0;}
 body{background:#fff;}
 a,a:hover{color:#fff;}
-.container{margin-top:4em}
+ .container{margin-top:1em} 
 .spinner{position:fixed;top:50%;left:50%;margin-top:-15px;margin-left:-15px;}
 

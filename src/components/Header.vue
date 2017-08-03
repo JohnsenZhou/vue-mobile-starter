@@ -1,6 +1,6 @@
 <template>
   <div class="header" v-once>
-    <div class="title"><router-link to="/" @click="resetSpinner">主页</router-link></div>
+    <div class="title"><router-link to="/">主页</router-link></div>
     <div class="title"><router-link to="/albums">相册</router-link></div>
     <div class="title"><router-link to="/users">用户中心</router-link></div>
   </div>
@@ -10,9 +10,7 @@
   export default {
     name: 'header',
     methods: {
-      resetSpinner() {
-        console.log(this.$router)
-      }
+      
     }
   }
 </script>

@@ -42,6 +42,7 @@ export default {
     vertical-align: top;
     /* 超出部分... */
     width: 70%;
+    text-align: left;
     display: inline-block;
     overflow: hidden;
     text-overflow: ellipsis;
