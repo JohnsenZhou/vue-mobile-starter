@@ -22,7 +22,7 @@ export default function request(url, options) {
       'content-type': 'application/json',
     };
   }
-  return axios(url, { ...options, headers, credentials: 'same-origin' })
+  return axios(url, { ...options, headers, withCredentials: true })
     .then(checkStatus)
     .then(data => ({ data }))
     .catch(err => ({ err }));
