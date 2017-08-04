@@ -60,7 +60,7 @@ npm run build
 ├── package.json         // npm 配置文件
 ├── pm2.json             // pm2 配置文件
 ├── server.js            // node 部署服务文件配置
-├── src 			     // 项目开发目录
+├── src                  // 项目开发目录
 │   ├── App.vue          // 项目主组件
 │   ├── assets           // 资源文件夹
 │   ├── components       // vue通用组件
@@ -82,8 +82,9 @@ npm run build
 >1. 想了解详细部署过程的同学请浏览 [**此文档**](https://github.com/JohnsenZhou/NodeApp-Deploy)
 
 
-### 移动端扫描下方二维码
+### 手机浏览请扫描下方二维码
 
 ![在线浏览](https://raw.githubusercontent.com/JohnsenZhou/NodeApp-Deploy/img/qrcode.png)
 
-
+## License
+[MIT](https://github.com/epicmaxco/vuestic-admin/blob/master/LICENSE) license.
