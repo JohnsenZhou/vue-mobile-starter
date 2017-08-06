@@ -15,7 +15,6 @@ const env = process.env.NODE_ENV || 'development';
 const isProd = env === 'production' ? true : false;
 
 // App配置
-console.log(isProd)
 const config = isProd ? require('./config.prod.json')
                       : require('./config.dev.json');
 
