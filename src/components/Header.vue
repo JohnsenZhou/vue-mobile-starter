@@ -10,7 +10,7 @@
     </mu-appbar>
     <mu-drawer :open="open" :docked="docked" @close="toggle()">
       <mu-menu @itemClick="docked ? '' : toggle()">
-        <mu-appbar title="Vue-Scaffold"/>
+        <mu-appbar title="Vue-Starter"/>
         <mu-menu-item title="主页" to="/" leftIcon="home" @click="Title = '主页'"/>
         <mu-divider />
         <mu-menu-item title="相册" to="/albums" leftIcon="photo" @click="Title = '相册'"/>
