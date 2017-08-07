@@ -27,7 +27,7 @@ There are a lot of pretty open sources about Vue practice on the internet,most o
 git clone https://github.com/JohnsenZhou/vue-mobile-starter.git
 
 # go to the repository catalog
-cd vue-scaffold
+cd vue-mobile-starter
 
 # install dependencies
 npm install
