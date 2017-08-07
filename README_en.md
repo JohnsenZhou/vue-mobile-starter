@@ -1,4 +1,4 @@
-# vue-mobile-scaffold
+# vue-mobile-starter
 
 
 

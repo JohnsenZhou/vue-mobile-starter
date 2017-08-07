@@ -1,4 +1,4 @@
-# vue-mobile-scaffold
+# vue-mobile-starter
 
 [View README in English](https://github.com/JohnsenZhou/vue-mobile-scaffold/blob/master/README_en.md)
 
