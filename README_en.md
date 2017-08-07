@@ -24,7 +24,7 @@ There are a lot of pretty open sources about Vue practice on the internet,most o
 
 ``` bash
 # clone the repository
-git clone https://github.com/JohnsenZhou/vue-scaffold.git
+git clone https://github.com/JohnsenZhou/vue-mobile-starter.git
 
 # go to the repository catalog
 cd vue-scaffold

@@ -30,7 +30,7 @@
 
 ``` bash
 # 克隆本仓库
-git clone https://github.com/JohnsenZhou/vue-scaffold.git
+git clone https://github.com/JohnsenZhou/vue-mobile-starter.git
 
 # 进入仓库目录
 cd vue-scaffold
