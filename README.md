@@ -1,4 +1,4 @@
-# vue-mobile-scaffold
+# vue-mobile-starter
 
 [View README in English](https://github.com/JohnsenZhou/vue-mobile-scaffold/blob/master/README_en.md)
 
@@ -30,7 +30,7 @@
 
 ``` bash
 # 克隆本仓库
-git clone https://github.com/JohnsenZhou/vue-scaffold.git
+git clone https://github.com/JohnsenZhou/vue-mobile-starter.git
 
 # 进入仓库目录
 cd vue-scaffold

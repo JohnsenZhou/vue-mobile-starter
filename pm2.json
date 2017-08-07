@@ -1,5 +1,5 @@
 {
-  "name": "vue-mobile-scaffold",
+  "name": "vue-mobile-starter",
   "script": "server.js",
   "env": {
     "NODE_ENV": "production"
