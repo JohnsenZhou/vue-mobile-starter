@@ -1,15 +1,23 @@
 <template>
   <div class="container">
     <img class="albun-png" src="../assets/img/album.png" alt="">
-    <!-- <span class="album-detail-title">详情</span> -->
-    <album-item-detail v-for="item in albumDetail" :key="item.id" :item="item"></album-item-detail>
+    <ul>
+      <li class="list-item" v-for="item in albumDetail" @click="open(item)" :key="item.id">
+        <img class="album-img" :src="item.thumbnailUrl" :alt="item.id">
+        <span class="album-detail-title">{{item.title}}</span>
+      </li>
+    </ul>
+    <mu-dialog :open="dialog" title="详情" @close="close">
+      <img class="album-img-detail" :src="itemDetail.url" alt="">
+      <span class="album-img-title">{{itemDetail.title}}</span>
+      <mu-flat-button slot="actions" primary @click="close" label="确定"/>
+    </mu-dialog>
     <clip-loader class="spinner" :loading="showSpinner" :color="color" :size="size"></clip-loader>
   </div>
 </template>
 
 <script>
   import { mapActions, mapGetters } from 'vuex';
-  import AlbumItemDetail from '../components/AlbumItemDetail.vue';
   export default {
     name: 'post-detail',
     data() {
@@ -17,11 +25,12 @@
         albumId: this.$route.params.albumId,
         color: '#00b4ff',
         size: '30px',
-        dialog: false
+        dialog: false,
+        itemDetail: {},
       }
     },
     components: {
-      AlbumItemDetail,
+      // AlbumItemDetail,
     },
     computed: {
       ...mapGetters({
@@ -33,8 +42,9 @@
       ...mapActions([
         
       ]),
-      open () {
-        this.dialog = true
+      open (item) {
+        this.itemDetail = item;
+        this.dialog = true;
       },
       close () {
         this.dialog = false
@@ -54,5 +64,30 @@
   .albun-png {
     width: 5em;
   }
-  
+  .album-img {
+    width: 3em;
+    height: 3em;
+  }
+  .album-detail-title {
+    padding-left: 1em;
+    height: 3em;
+    line-height: 3em;
+    vertical-align: top;
+    /* 超出部分... */
+    width: 70%;
+    text-align: left;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: 500;
+  }
+  .album-img-detail {
+    width: 100%;
+    margin-bottom: 1em;
+  }
+  .album-img-title {
+    text-align: center;
+    font-weight: 600;
+  }
 </style>
