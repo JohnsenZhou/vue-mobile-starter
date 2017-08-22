@@ -13,12 +13,12 @@ export default {
   props: ['item'],
   data() {
     return {
-      userIconlist: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
       imgSrc: ''
     }
   },
   created() {
-    let index =  Math.ceil((Math.random() * this.userIconlist.length));
+    // 随机图片
+    let index =  Math.ceil((Math.random() * 12));
     this.imgSrc = `../static/user/emoji-${index}.png`;
   }
 }

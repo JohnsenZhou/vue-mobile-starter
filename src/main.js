@@ -13,6 +13,7 @@ import './assets/css/common.css';
 
 Vue.config.productionTip = false;
 Vue.component('clip-loader', ClipLoader);
+// 引入museUI
 Vue.use(MuseUI);
 
 /* eslint-disable no-new */
