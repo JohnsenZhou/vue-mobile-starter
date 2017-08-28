@@ -80,4 +80,4 @@ npm run build
 ![在线浏览](https://raw.githubusercontent.com/JohnsenZhou/NodeApp-Deploy/img/qrcode.png)
 
 ## License
-[MIT](https://github.com/epicmaxco/vuestic-admin/blob/master/LICENSE) license.
+[MIT](https://github.com/JohnsenZhou/vue-mobile-starter/blob/master/LICENSE) license.
