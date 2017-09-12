@@ -1,4 +1,4 @@
-# vue-mobile-starter
+# vue-mobile-starter &middot;  [![PyPI](https://img.shields.io/pypi/status/Django.svg)]()  [![Packagist](https://img.shields.io/packagist/l/doctrine/orm.svg)](https://github.com/JohnsenZhou/vue-mobile-starter/blob/master/LICENSE)
 
 [View README in English](https://github.com/JohnsenZhou/vue-mobile-starter/blob/master/README_en.md)
 
