@@ -3,12 +3,12 @@
     <img class="albun-png" src="../assets/img/album.png" alt="">
     <ul>
       <li class="list-item" v-for="item in albumDetail" @click="open(item)" :key="item.id">
-        <img class="album-img" :src="item.thumbnailUrl" :alt="item.id">
+        <img class="album-img" v-lazy="item.thumbnailUrl" :alt="item.id">
         <span class="album-detail-title">{{item.title}}</span>
       </li>
     </ul>
     <mu-dialog :open="dialog" title="详情" @close="close">
-      <img class="album-img-detail" :src="itemDetail.url" alt="">
+      <img class="album-img-detail" v-lazy="itemDetail.url" alt="">
       <span class="album-img-title">{{itemDetail.title}}</span>
       <mu-flat-button slot="actions" primary @click="close" label="确定"/>
     </mu-dialog>
