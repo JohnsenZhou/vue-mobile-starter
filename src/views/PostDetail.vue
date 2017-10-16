@@ -41,7 +41,7 @@
     },
     computed: {
       ...mapGetters({
-        postDetail: 'postDetail',
+        postDetail: 'posts/postDetail',
         showSpinner: 'isSpinner'
       }),
       // ...mapState({
@@ -53,7 +53,7 @@
           return this.$store.state.posts.formData.title;
         },
         set(value) {
-          this.$store.commit('UPDATE_TITLE', value)
+          this.$store.commit('posts/UPDATE_TITLE', value)
         }
       },
       body: {
@@ -61,7 +61,7 @@
           return this.$store.state.posts.formData.body;
         },
         set(value) {
-          this.$store.commit('UPDATE_BODY', value)
+          this.$store.commit('posts/UPDATE_BODY', value)
         }
       }
     },
@@ -82,16 +82,16 @@
           console.log(res.data.data);
           const returnDetail = res.data.data;
           console.log(this)
-          this.$store.commit('SAVE_POSTDETAIL', { postDetail: returnDetail });
+          this.$store.commit('posts/SAVE_POSTDETAIL', { postDetail: returnDetail });
         })
         this.close()
       }
     },
     created() {
-      this.$store.dispatch('getPostDetail', this.postId);
+      this.$store.dispatch('posts/getPostDetail', this.postId);
     },
     destroyed() {
-      this.$store.dispatch('resetDetail');
+      this.$store.dispatch('posts/resetDetail');
       this.$store.dispatch('resetSpinner');
     }
   }

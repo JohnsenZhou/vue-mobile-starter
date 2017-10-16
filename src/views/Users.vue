@@ -24,7 +24,7 @@
     },
     computed: {
       ...mapGetters({
-        usersList: 'allUsers',
+        usersList: 'users/allUsers',
         showSpinner: 'isSpinner'
       })
     },
@@ -34,10 +34,10 @@
       ])
     },
     created() {
-      this.$store.dispatch('getUsers');
+      this.$store.dispatch('users/getUsers');
     },
     destroyed() {
-      this.$store.dispatch('resetSpinner');
+      this.$store.dispatch('users/resetSpinner');
     }
   }
 </script>

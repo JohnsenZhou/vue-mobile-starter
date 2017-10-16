@@ -34,7 +34,7 @@
     },
     computed: {
       ...mapGetters({
-        albumDetail: 'albumDetail',
+        albumDetail: 'albums/albumDetail',
         showSpinner: 'isSpinner'
       })
     },
@@ -51,10 +51,10 @@
       }
     },
     created() {
-      this.$store.dispatch('getAlbumDetail', this.albumId);
+      this.$store.dispatch('albums/getAlbumDetail', this.albumId);
     },
     destroyed() {
-      this.$store.dispatch('resetAlbumDetail');
+      this.$store.dispatch('albums/resetAlbumDetail');
       this.$store.dispatch('resetSpinner');
     }
   }

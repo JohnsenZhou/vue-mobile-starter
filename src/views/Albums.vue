@@ -22,17 +22,17 @@
     },
     computed: {
       ...mapGetters({
-        albums: 'allAlbums',
+        albums: 'albums/allAlbums',
         showSpinner: 'isSpinner'
       })
     },
     methods: {
       ...mapActions([
-        'getAlbums'
+        'albums/getAlbums'
       ])
     },
     created() {
-      this.$store.dispatch('getAlbums')
+      this.$store.dispatch('albums/getAlbums')
     },
     destroyed() {
       this.$store.dispatch('resetSpinner');

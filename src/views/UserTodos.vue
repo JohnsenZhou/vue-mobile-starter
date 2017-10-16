@@ -18,7 +18,7 @@
       UserTodosItem,
     },
     computed: {
-      ...mapGetters({
+      ...mapGetters('users', {
         userTodos: 'userTodos',
       })
     },
@@ -28,7 +28,7 @@
       ])
     },
     created() {
-      this.$store.dispatch('getUserTodoList', this.userId);
+      this.$store.dispatch('users/getUserTodoList', this.userId);
     },
     destroyed() {
       // // childId 为三个子路由模块的代号。1 代表todos；2 代表 posts；3代表albums

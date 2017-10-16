@@ -20,7 +20,7 @@ const actions = {
       const albumsList = res.data.data;
       // console.log(albumsList)
       const showSpinner = false;
-      dispatch('doSpinner', showSpinner);
+      dispatch('doSpinner', showSpinner, { root: true });
       commit(types.SAVE_ALBULMS_LIST, { albumsList });
     });
   },
@@ -28,7 +28,7 @@ const actions = {
     jsonServices.getAlbumDetail(albumId).then((res) => {
       const albumDetail = res.data.data;
       const showSpinner = false;
-      dispatch('doSpinner', showSpinner);
+      dispatch('doSpinner', showSpinner, { root: true });
       commit(types.SAVE_ALBUMDETAIL, { albumDetail });
     });
   },
@@ -57,4 +57,5 @@ export default {
   getters,
   actions,
   mutations,
+  namespaced: true
 };
