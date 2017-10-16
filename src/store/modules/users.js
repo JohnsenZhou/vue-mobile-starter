@@ -25,7 +25,7 @@ const actions = {
     jsonServices.getUsers().then((res) => {
       const usersList = res.data.data;
       const showSpinner = false;
-      dispatch('doSpinner', showSpinner);
+      dispatch('doSpinner', showSpinner, { root: true });
       commit(types.SAVE_USERS_LIST, { usersList });
     });
   },
@@ -33,7 +33,7 @@ const actions = {
     jsonServices.getUserDetail(userId).then((res) => {
       const userDetail = res.data.data;
       const showSpinner = false;
-      dispatch('doSpinner', showSpinner);
+      dispatch('doSpinner', showSpinner, { root: true });
       commit(types.SAVE_USERS_DETAIL, { userDetail });
     });
   },
@@ -106,4 +106,5 @@ export default {
   getters,
   actions,
   mutations,
+  namespaced: true
 };

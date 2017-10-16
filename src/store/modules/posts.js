@@ -25,7 +25,7 @@ const actions = {
     jsonServices.getPostsList().then((res) => {
       const postsList = res.data.data;
       const showSpinner = false;
-      dispatch('doSpinner', showSpinner);
+      dispatch('doSpinner', showSpinner, { root: true });
       commit(types.SAVE_POSTS_LIST, { postsList });
     });
   },
@@ -37,7 +37,7 @@ const actions = {
       jsonServices.getPostComment(postId).then((res) => {
         comments = res.data.data;
         postDetail.comments = comments;
-        dispatch('doSpinner', showSpinner);
+        dispatch('doSpinner', showSpinner, { root: true });
         commit(types.SAVE_POSTDETAIL, { postDetail })
       });
     });
@@ -85,4 +85,5 @@ export default {
   getters,
   actions,
   mutations,
+  namespaced: true
 };

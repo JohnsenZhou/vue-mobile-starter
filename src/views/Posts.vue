@@ -22,17 +22,17 @@
     },
     computed: {
       ...mapGetters({
-        postsList: 'allPosts',
+        postsList: 'posts/allPosts',
         showSpinner: 'isSpinner'
       })
     },
     methods: {
       ...mapActions([
-        'getPosts'
+        'posts/getPosts'
       ]),
     },
     created() {
-      this.$store.dispatch('getPosts')
+      this.$store.dispatch('posts/getPosts')
     },
     destroyed() {
       this.$store.dispatch('resetSpinner');

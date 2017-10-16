@@ -44,7 +44,7 @@
     },
     computed: {
       ...mapGetters({
-        userDetail: 'userDetail',
+        userDetail: 'users/userDetail',
         showSpinner: 'isSpinner'
       })
     },
@@ -64,10 +64,10 @@
       let index =  Math.ceil((Math.random() * this.userIconlist.length));
       this.imgSrc = `../static/user/emoji-${index}.png`;
       this.bottomNav = this.$route.name;
-      this.$store.dispatch('getUserDetail', this.userId);
+      this.$store.dispatch('users/getUserDetail', this.userId);
     },
     destroyed() {
-      this.$store.commit('RESET_USER_DETAIL');
+      this.$store.commit('users/RESET_USER_DETAIL');
       this.$store.dispatch('resetSpinner');
     }
   }
